@@ -1,0 +1,55 @@
+{
+  "name": "cordova-plugin-neugeofence",
+  "version": "1.0.0",
+  "description": "Cordova neutrinos geofence plugin",
+  "author": "jatahworx",
+  "cordova": {
+      "id": "cordova-plugin-neugeofence",
+      "platforms": [
+          "android",
+          "ios",
+          "wp8",
+          "windows8",
+          "windows"
+      ]
+  },
+  "bugs": {
+    "url": "https://github.com/NeutrinosPlatform/cordova-plugin-neugeofence/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "devDependencies": {
+    "cordova": "^7.0.1",
+    "cordova-paramedic": "git+https://github.com/apache/cordova-paramedic.git"
+  },
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=5.0.0"
+    }
+  ],
+  "homepage": "https://github.com/NeutrinosPlatform/cordova-plugin-neugeofence#readme",
+  "keywords": [
+    "cordova",
+    "plugin",
+    "geofence",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "cordova-wp8",
+    "cordova-windows8",
+    "cordova-windows"
+  ],
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NeutrinosPlatform/cordova-plugin-neugeofence.git"
+  },
+  "scripts": {
+    "posttest": "sed -i 's/play-services-location:9.8.0/play-services-location:+/g' plugin.xml",
+    "pretest": "sed -i 's/play-services-location:+/play-services-location:9.8.0/g' plugin.xml",
+    "test": "cordova-paramedic --platform android@6.0 --plugin . --verbose",
+    "test:ios": "FIX_PARAMEDIC=true cordova-paramedic --platform ios --plugin . --verbose"
+  },
+  "typings": "./typings/cordova-plugin-neugeofence.d.ts"
+}
